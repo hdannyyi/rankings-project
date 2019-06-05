@@ -23,9 +23,9 @@ router.get('/', async (req, res, next) => {
 router.post('/update', (req, res) => {
     console.log(req.body);
 
-    for (let key in req.body) {
-        RankingsModel.update(key, req.body[key]);
-    }
+    // for (let key in req.body) {
+    //     RankingsModel.update(key, req.body[key]);
+    // }
 
     res.status(200).redirect('/');
 });

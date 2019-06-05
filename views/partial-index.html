@@ -1,0 +1,19 @@
+<section class="section">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Ranking</th>
+            </tr>
+        </thead>
+        ${topics.map(topics =>
+            `<tr>
+                <td>${topics.topic_name}</td>
+                ${topicsStatus.map(topicsStatus =>
+                    `<td> ${topics.status_id}</td>
+                    <td> ${topics.status_title}</td>
+                    `).join('')}
+            </tr>`
+            ).join('')}
+    </table>
+</section>

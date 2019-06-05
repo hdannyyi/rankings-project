@@ -11,7 +11,7 @@ class ClassRankings {
         try {
             const response = await db.any(`SELECT
                     topics.id,
-                    topics.topics_name,
+                    topics.topic_name,
                     topics.status_id,
                     class_status.status_title
                 FROM topics
@@ -33,8 +33,8 @@ class ClassRankings {
         }
     }
 
-    static async update(topic, rank) {
-        const query = `UPDATE topics SET status_id = ${rank} WHERE topic_name = '${topic}'`
+    static async update(topics, rank) {
+        const query = `UPDATE topics SET status_id = ${rank} WHERE topic_name = '${topics}'`
         try {
             const response = await db.result(query);
             console.log('response is', response);
